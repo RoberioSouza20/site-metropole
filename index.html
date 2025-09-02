@@ -38,7 +38,8 @@
             @apply bg-deepgray text-left text-sm font-semibold uppercase tracking-wider text-gray-300;
         }
         .table-cell {
-            @apply px-4 py-3;
+            /* Aumentando o padding vertical para criar o espaçamento */
+            @apply px-4 py-6;
         }
         .table-row-odd {
             @apply bg-darkblack;
@@ -46,24 +47,13 @@
         .table-row-even {
             @apply bg-deepgray;
         }
-        /* Espaçamento entre as linhas da tabela */
-        .table-row-odd, .table-row-even {
-            margin-bottom: 1rem; /* Aumentei o espaçamento entre as linhas */
-            display: table-row; /* Garante que o margin-bottom funcione como esperado */
-        }
-        /* Remover a borda inferior das linhas para que o espaçamento seja mais visível */
-        .table-row-odd.border-b, .table-row-even.border-b {
-            border-bottom: none;
-        }
-
         .text-punicao {
             @apply font-bold;
             color: #fde047;
         }
         .text-punicao-ban {
-            /* Alterado para que a punição de banimento seja somente o texto vermelho */
             @apply font-bold;
-            color: #ef4444; /* Cor vermelha */
+            color: #ef4444; 
         }
         .description-cell {
             @apply text-gray-400 text-sm;
@@ -81,10 +71,10 @@
             text-align: right;
         }
         .table-cell-infraction {
-            @apply pl-6 pr-2 py-3;
+            @apply pl-6 pr-2;
         }
         .table-cell-punishment {
-            @apply pl-2 pr-4 py-3;
+            @apply pl-2 pr-4;
             text-align: right;
         }
     </style>
@@ -198,7 +188,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">ABUSO DE BUG</span>
                                 <br/>
@@ -206,7 +196,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">ABUSO DE PODER</span>
                                 <br/>
@@ -214,7 +204,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">ANTI AMOR A VIDA</span>
                                 <br/>
@@ -222,7 +212,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">AÇÃO INCORRETA</span>
                                 <br/>
@@ -230,7 +220,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">CAR PARKING</span>
                                 <br/>
@@ -238,7 +228,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">BAIT / COP BAIT</span>
                                 <br/>
@@ -246,7 +236,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">COMBAT LOGGING (CL)</span>
                                 <br/>
@@ -254,7 +244,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">ESTELIONATO / GOLPE</span>
                                 <br/>
@@ -262,7 +252,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">FAKE PROFISSÃO</span>
                                 <br/>
@@ -270,7 +260,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">FAKE STAFF</span>
                                 <br/>
@@ -278,7 +268,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">FLAMING</span>
                                 <br/>
@@ -286,7 +276,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">LEMBRAR DE AÇÃO</span>
                                 <br/>
@@ -294,7 +284,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">LOOT INDEVIDO</span>
                                 <br/>
@@ -302,7 +292,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO + ADV + MULTA NO VALOR DOS ITENS</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">MAU USO DO CALL ADM</span>
                                 <br/>
@@ -310,7 +300,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">100 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">MAU USO DOS CHATS DA CIDADE</span>
                                 <br/>
@@ -318,7 +308,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">METAGAMING</span>
                                 <br/>
@@ -326,7 +316,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">POWER GAMING</span>
                                 <br/>
@@ -334,7 +324,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">QUEBRA DE IMERSÃO</span>
                                 <br/>
@@ -342,7 +332,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">RDM</span>
                                 <br/>
@@ -350,7 +340,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">VDM</span>
                                 <br/>
@@ -358,7 +348,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">250 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">Uso de fuzil na região sul</span>
                                 <br/>
@@ -366,7 +356,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao">500 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">HACKER</span>
                                 <br/>
@@ -374,7 +364,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
                         </tr>
-                        <tr class="table-row-odd">
+                        <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">DARK RP</span>
                                 <br/>
@@ -382,7 +372,7 @@
                             </td>
                             <td class="table-cell table-cell-punishment"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
                         </tr>
-                        <tr class="table-row-even">
+                        <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell table-cell-infraction">
                                 <span class="font-bold text-gray-200">DUMP</span>
                                 <br/>
