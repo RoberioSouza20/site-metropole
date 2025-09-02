@@ -20,9 +20,7 @@
                             500: '#d32f2f',
                             700: '#b71c1c'
                         },
-                        // Adicionando um tom de preto bem escuro para o tema
                         darkblack: '#1a1a1a', 
-                        // Um cinza ainda mais escuro para elementos de fundo
                         deepgray: '#121212',
                     }
                 }
@@ -30,25 +28,23 @@
         }
     </script>
     <style>
-        /* Estilos CSS personalizados para garantir o tema preto e alinhamento */
         body {
-            background-color: #1a1a1a; /* Tema ainda mais escuro para o fundo do body */
+            background-color: #1a1a1a;
         }
         .table-container {
             @apply w-full;
         }
         .table-header {
-            /* Fundo escuro para o cabeçalho da tabela */
             @apply bg-deepgray text-left text-sm font-semibold uppercase tracking-wider text-gray-300;
         }
         .table-cell {
             @apply px-4 py-3;
         }
         .table-row-odd {
-            @apply bg-darkblack; /* Fundo escuro para linhas ímpares */
+            @apply bg-darkblack;
         }
         .table-row-even {
-            @apply bg-deepgray; /* Fundo ainda mais escuro para linhas pares */
+            @apply bg-deepgray;
         }
         .text-punicao {
             @apply font-bold text-black px-2 py-1 rounded;
@@ -67,27 +63,27 @@
 
         /* Ajustes de alinhamento e larguras para as colunas */
         .table-col-infraction {
-            width: 25%; /* Ajuste a largura conforme necessário */
+            width: 25%;
             text-align: left;
         }
         .table-col-description {
-            width: 50%; /* Ajuste a largura conforme necessário */
+            width: 50%;
             text-align: left;
         }
         .table-col-punishment {
-            width: 25%; /* Ajuste a largura conforme necessário */
-            text-align: right; /* Alinha a punição à direita */
+            width: 25%;
+            text-align: right;
         }
         /* Ajuste do padding nas células para alinhamento */
         .table-cell-infraction {
-            @apply pl-4 pr-2 py-3; /* Padding para a infração */
+            @apply pl-6 pr-2 py-3; /* Ajustado o padding esquerdo (pl) para 6 */
         }
         .table-cell-description {
-            @apply px-2 py-3; /* Padding para a descrição */
+            @apply px-2 py-3;
         }
         .table-cell-punishment {
-            @apply pl-2 pr-4 py-3; /* Padding para a punição */
-            text-align: right; /* Garante o alinhamento à direita na punição */
+            @apply pl-2 pr-4 py-3;
+            text-align: right;
         }
     </style>
 </head>
