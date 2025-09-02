@@ -45,6 +45,10 @@
             @apply font-bold text-black px-2 py-1 rounded;
             background-color: #fde047; /* Cor amarela do print */
         }
+        .text-punicao-ban {
+            @apply font-bold text-white px-2 py-1 rounded;
+            background-color: #ef4444; /* Cor vermelha para banimento */
+        }
         .description-cell {
             @apply text-gray-400 text-sm;
         }
@@ -102,6 +106,58 @@
                         <li>O acúmulo do histórico de prisão é feito apenas para infrações iguais.</li>
                     </ul>
                 </div>
+
+                <div class="flex items-start gap-8 mb-8">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
+                            <i class="fas fa-circle text-blue-500 text-sm"></i> Procedimentos de Aplicação
+                        </h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300">
+                            <li><span class="font-semibold">Identificação:</span> Staff identifica a infração</li>
+                            <li><span class="font-semibold">Documentação:</span> Captura de evidências (screenshots, logs, vídeos)</li>
+                            <li><span class="font-semibold">Comunicação:</span> Informar ao jogador sobre a punição</li>
+                            <li><span class="font-semibold">Aplicação:</span> Executar a punição conforme tabela</li>
+                            <li><span class="font-semibold">Registro:</span> Documentar no sistema administrativo</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
+                            <i class="fas fa-balance-scale text-green-500"></i> Sistema de Recursos
+                        </h3>
+                        <p class="font-semibold text-gray-300 mb-2">Como recorrer:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li><span class="font-semibold">Prazo:</span> 10 dias após a aplicação</li>
+                            <li><span class="font-semibold">Formato:</span> Ticket de revisão no Discord ou email oficial</li>
+                            <li><span class="font-semibold">Análise:</span> Revisão por equipe adequada para análise</li>
+                            <li><span class="font-semibold">Decisão:</span> Resposta em até 48 horas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 text-center mt-8">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center justify-center gap-2">
+                        <i class="fas fa-circle text-blue-500 text-sm"></i> Sobre o Sistema de Punições
+                    </h3>
+                    <p class="text-gray-300 mb-6">
+                        O sistema de punições da Metrópole RJ foi criado para garantir um ambiente justo e organizado. Todas as penalidades são aplicadas de forma transparente e seguem procedimentos estabelecidos.
+                    </p>
+                    <div class="flex justify-around items-center text-gray-400 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Aplicação: Staff autorizada</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-clock"></i>
+                            <span>Última atualização: 28/08/2025</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Sistema transparente</span>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="flex items-center gap-2 mb-6 mt-12">
                     <i class="fas fa-stream text-gray-400 text-xl"></i>
@@ -228,17 +284,17 @@
                         <tr class="table-row-even border-b border-gray-700">
                             <td class="table-cell font-medium text-gray-200">HACKER</td>
                             <td class="table-cell description-cell">Situação: Utilização de qualquer tipo de software ou programa de terceiros para obter vantagem indevida no jogo.</td>
-                            <td class="table-cell"><span class="text-punicao">BANIMENTO IMEDIATO</span></td>
+                            <td class="table-cell"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
                         </tr>
                         <tr class="table-row-odd border-b border-gray-700">
                             <td class="table-cell font-medium text-gray-200">DARK RP</td>
                             <td class="table-cell description-cell">Situação: Quebra de regras de roleplay que resultam em ações extremas, como tortura, estupro, ou qualquer tipo de violência gratuita.</td>
-                            <td class="table-cell"><span class="text-punicao">BANIMENTO IMEDIATO</span></td>
+                            <td class="table-cell"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
                         </tr>
                         <tr class="table-row-even">
                             <td class="table-cell font-medium text-gray-200">DUMP</td>
                             <td class="table-cell description-cell">Situação: Utilização de bugs ou exploits para duplicar itens ou dinheiro dentro do jogo.</td>
-                            <td class="table-cell"><span class="text-punicao">BANIMENTO IMEDIATO</span></td>
+                            <td class="table-cell"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
                         </tr>
                     </tbody>
                 </table>
