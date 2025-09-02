@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Metrópole RJ RP</title>
-  <meta name="description" content="Landing page do servidor de RP Metrópole RJ." />
-  
-  <!-- Fonte e Tailwind -->
+  <title>Tabela de Punições - Complexo RJ</title>
+  <meta name="description" content="Tabela completa de penalidades e infrações do servidor Complexo RJ." />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -25,45 +24,176 @@
       }
     }
   </script>
+  <style>
+    /* Estilo adicional para a tabela */
+    .table-container {
+        @apply w-full;
+    }
+    .table-header {
+        @apply bg-gray-700 text-left text-sm font-semibold uppercase tracking-wider;
+    }
+    .table-cell {
+        @apply px-4 py-3;
+    }
+    .table-row-odd {
+        @apply bg-gray-800;
+    }
+    .table-row-even {
+        @apply bg-gray-700;
+    }
+    .text-punicao {
+        @apply font-bold text-red-400;
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <!-- Header -->
   <header class="bg-gray-800 shadow-md sticky top-0 z-50">
     <div class="container mx-auto flex items-center justify-between px-6 py-3">
-      <!-- Logo -->
-      <img src="logo.png" alt="Metrópole RJ" class="h-14">
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-2xl font-extrabold text-brand-500">Complexo RJ</span>
+      </a>
 
-      <!-- Menu -->
       <nav class="flex gap-6 text-lg font-medium">
-        <a href="#home" class="hover:text-brand-500">Home</a>
-        <a href="#punicoes" class="hover:text-brand-500">Punições</a>
-        <a href="https://discord.gg/pNZePYUyZe" target="_blank" class="hover:text-brand-500">Discord</a>
-        <a href="https://www.instagram.com/metropolerjofc" target="_blank" class="hover:text-brand-500">Instagram</a>
+        <a href="#tabela" class="hover:text-brand-500">Tabela</a>
+        <a href="https://discord.gg/your-discord-invite" target="_blank" class="hover:text-brand-500">Discord</a>
+        <a href="https://www.instagram.com/your-instagram" target="_blank" class="hover:text-brand-500">Instagram</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="relative h-[70vh] flex items-center justify-center bg-cover bg-center" style="background-image: url('banner.png');">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    <div class="relative text-center">
-      <h1 class="text-5xl font-bold mb-4">Metrópole RJ RP</h1>
-      <p class="text-lg">Servidor oficial de Roleplay no Rio de Janeiro</p>
-    </div>
-  </section>
-
-  <!-- Punições -->
-  <section id="punicoes" class="py-16 bg-gray-900">
+  <main class="py-16">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-8 text-center">📜 Tabela de Punições</h2>
-      <img src="regras1.png" alt="Tabela de Punições Parte 1" class="mx-auto rounded-lg shadow-lg mb-8">
-      <img src="regras2.png" alt="Tabela de Punições Parte 2" class="mx-auto rounded-lg shadow-lg">
-    </div>
-  </section>
+      <section id="tabela" class="mb-16">
+        <h1 class="text-4xl font-bold mb-4 text-center">Tabela de Punições</h1>
+        <p class="text-center text-gray-400 text-lg">
+          Sistema de penalidades e infrações da Complexo RJ
+        </p>
 
-  <!-- Footer -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-xl mt-12">
+          <h2 class="text-2xl font-semibold mb-4 text-brand-500">Avisos Importantes</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-300">
+            <li>No sistema de punições da Complexo RJ, todas as penalidades são aplicadas de forma transparente e seguem procedimentos estabelecidos.</li>
+            <li>Ao cometer uma infração na qual a punição seja somente prisão, a ADV será aplicada apenas após a 5ª infração pelo mesmo motivo.</li>
+            <li>Na compra de algum item de remover punição ou unban no site, o histórico de prisão não será removido, sendo removidas apenas as advertências.</li>
+            <li>Antes de comprar qualquer Remoção de punição no site, procure saber se a sua punição é passível dessa compra.</li>
+            <li>O acúmulo do histórico de prisão é feito apenas para infrações iguais.</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="table-container overflow-x-auto rounded-lg shadow-xl">
+        <table class="min-w-full">
+          <thead>
+            <tr class="table-header">
+              <th class="table-cell">Infração</th>
+              <th class="table-cell">Punição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">ABUSO DE BUG</td>
+              <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">ABUSO DE PODER</td>
+              <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">ANTI AMOR A VIDA</td>
+              <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">AÇÃO INCORRETA</td>
+              <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">CAR PARKING</td>
+              <td class="table-cell"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">BAIT / COP BAIT</td>
+              <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">COMBAT LOGGING (CL)</td>
+              <td class="table-cell"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">ESTELIONATO / GOLPE</td>
+              <td class="table-cell"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">FAKE PROFISSÃO</td>
+              <td class="table-cell"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">FAKE STAFF</td>
+              <td class="table-cell"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">FLAMING</td>
+              <td class="table-cell"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">LEMBRAR DE AÇÃO</td>
+              <td class="table-cell"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">LOOT INDEVIDO</td>
+              <td class="table-cell"><span class="text-punicao">400 MESES DE PRISÃO + ADV + MULTA NO VALOR DOS ITENS</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">MAU USO DO CALL ADM</td>
+              <td class="table-cell"><span class="text-punicao">100 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">MAU USO DOS CHATS DA CIDADE</td>
+              <td class="table-cell"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">METAGAMING</td>
+              <td class="table-cell"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">POWER GAMING</td>
+              <td class="table-cell"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">QUEBRA DE IMERSÃO</td>
+              <td class="table-cell"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">RDM</td>
+              <td class="table-cell"><span class="text-punicao">400 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">VDM</td>
+              <td class="table-cell"><span class="text-punicao">250 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">Uso de fuzil na região sul</td>
+              <td class="table-cell"><span class="text-punicao">500 MESES DE PRISÃO</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">HACKER</td>
+              <td class="table-cell"><span class="text-punicao">BANIMENTO IMEDIATO</span></td>
+            </tr>
+            <tr class="table-row-odd">
+              <td class="table-cell font-medium">DARK RP</td>
+              <td class="table-cell"><span class="text-punicao">BANIMENTO IMEDIATO</span></td>
+            </tr>
+            <tr class="table-row-even">
+              <td class="table-cell font-medium">DUMP</td>
+              <td class="table-cell"><span class="text-punicao">BANIMENTO IMEDIATO</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
   <footer class="bg-gray-800 py-6 mt-16 text-center text-sm text-gray-400">
-    © 2025 Metrópole RJ RP. Todos os direitos reservados.
+    © 2025 Complexo RJ. Todos os direitos reservados.
   </footer>
 </body>
 </html>
