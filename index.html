@@ -19,27 +19,36 @@
                         brand: {
                             500: '#d32f2f',
                             700: '#b71c1c'
-                        }
+                        },
+                        // Adicionando um tom de preto bem escuro para o tema
+                        darkblack: '#1a1a1a', 
+                        // Um cinza ainda mais escuro para elementos de fundo
+                        deepgray: '#121212',
                     }
                 }
             }
         }
     </script>
     <style>
+        /* Estilos CSS personalizados para garantir o tema preto e alinhamento */
+        body {
+            background-color: #1a1a1a; /* Tema ainda mais escuro para o fundo do body */
+        }
         .table-container {
             @apply w-full;
         }
         .table-header {
-            @apply bg-gray-700 text-left text-sm font-semibold uppercase tracking-wider text-gray-300;
+            /* Fundo escuro para o cabeçalho da tabela */
+            @apply bg-deepgray text-left text-sm font-semibold uppercase tracking-wider text-gray-300;
         }
         .table-cell {
             @apply px-4 py-3;
         }
-        .table-row-hover {
-            @apply transition-colors duration-200 ease-in-out;
+        .table-row-odd {
+            @apply bg-darkblack; /* Fundo escuro para linhas ímpares */
         }
-        .table-row-hover:hover {
-            @apply bg-gray-600;
+        .table-row-even {
+            @apply bg-deepgray; /* Fundo ainda mais escuro para linhas pares */
         }
         .text-punicao {
             @apply font-bold text-black px-2 py-1 rounded;
@@ -55,10 +64,35 @@
         .custom-hr {
             border-top: 1px solid rgba(107, 114, 128, 0.4);
         }
+
+        /* Ajustes de alinhamento e larguras para as colunas */
+        .table-col-infraction {
+            width: 25%; /* Ajuste a largura conforme necessário */
+            text-align: left;
+        }
+        .table-col-description {
+            width: 50%; /* Ajuste a largura conforme necessário */
+            text-align: left;
+        }
+        .table-col-punishment {
+            width: 25%; /* Ajuste a largura conforme necessário */
+            text-align: right; /* Alinha a punição à direita */
+        }
+        /* Ajuste do padding nas células para alinhamento */
+        .table-cell-infraction {
+            @apply pl-4 pr-2 py-3; /* Padding para a infração */
+        }
+        .table-cell-description {
+            @apply px-2 py-3; /* Padding para a descrição */
+        }
+        .table-cell-punishment {
+            @apply pl-2 pr-4 py-3; /* Padding para a punição */
+            text-align: right; /* Garante o alinhamento à direita na punição */
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-    <header class="bg-gray-900 shadow-md sticky top-0 z-50">
+<body class="bg-darkblack text-white font-sans">
+    <header class="bg-deepgray shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex items-center justify-end px-6 py-3">
             <nav class="flex items-center gap-4 text-lg font-medium">
                 <a href="https://discord.gg/fVTDFn9k4q" target="_blank" class="text-gray-400 hover:text-brand-500">
@@ -80,7 +114,7 @@
                 </p>
                 <hr class="custom-hr mb-8" />
 
-                <div class="bg-gray-800 p-6 rounded-lg shadow-xl mt-8 mb-8 border border-gray-700">
+                <div class="bg-deepgray p-6 rounded-lg shadow-xl mt-8 mb-8 border border-gray-700">
                     <h2 class="text-2xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
                         <i class="fas fa-exclamation-triangle text-yellow-400"></i> Avisos Importantes
                     </h2>
@@ -94,7 +128,7 @@
                 </div>
 
                 <div class="flex items-start gap-8 mb-8">
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
+                    <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
                         <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
                             <i class="fas fa-circle text-blue-500 text-sm"></i> Procedimentos de Aplicação
                         </h3>
@@ -107,7 +141,7 @@
                         </ol>
                     </div>
 
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
+                    <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 w-1/2">
                         <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center gap-2">
                             <i class="fas fa-balance-scale text-green-500"></i> Sistema de Recursos
                         </h3>
@@ -121,7 +155,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 text-center mt-8">
+                <div class="bg-deepgray p-6 rounded-lg shadow-xl border border-gray-700 text-center mt-8">
                     <h3 class="text-xl font-semibold mb-4 text-gray-200 flex items-center justify-center gap-2">
                         <i class="fas fa-circle text-blue-500 text-sm"></i> Sobre o Sistema de Punições
                     </h3>
@@ -156,131 +190,131 @@
                 <table class="min-w-full">
                     <thead>
                         <tr class="table-header">
-                            <th class="table-cell w-1/4">Infração</th>
-                            <th class="table-cell w-1/2">Descrição</th>
-                            <th class="table-cell w-1/4">Punição</th>
+                            <th class="table-cell table-col-infraction">Infração</th>
+                            <th class="table-cell table-col-description">Descrição</th>
+                            <th class="table-cell table-col-punishment">Punição</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">ABUSO DE BUG</td>
-                            <td class="table-cell description-cell">Abusar de bugs, erros da cidade ou mecânica de jogo para benefício próprio, de modo a afetar negativamente a cidade e prejudicar outros jogadores.</td>
-                            <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">ABUSO DE BUG</td>
+                            <td class="table-cell table-cell-description description-cell">Abusar de bugs, erros da cidade ou mecânica de jogo para benefício próprio, de modo a afetar negativamente a cidade e prejudicar outros jogadores.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">ABUSO DE PODER</td>
-                            <td class="table-cell description-cell">Situação: Quando o cidadão tem um determinado poder/habilidade na cidade (Ex: Dr, segurar no H...) e utiliza esse poder/habilidade pra abusar ou beneficiar ou beneficiar alguém. Esses poderes devem ser usados apenas como ferramenta de seu trabalho.</td>
-                            <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">ABUSO DE PODER</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando o cidadão tem um determinado poder/habilidade na cidade (Ex: Dr, segurar no H...) e utiliza esse poder/habilidade pra abusar ou beneficiar ou beneficiar alguém. Esses poderes devem ser usados apenas como ferramenta de seu trabalho.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">ANTI AMOR A VIDA</td>
-                            <td class="table-cell description-cell">Situação: Anti amor a vida é você fazer coisas, de forma proposital, que colocam sua vida em risco.</td>
-                            <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">ANTI AMOR A VIDA</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Anti amor a vida é você fazer coisas, de forma proposital, que colocam sua vida em risco.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">AÇÃO INCORRETA</td>
-                            <td class="table-cell description-cell">Situação: Quando o player executa uma ação (ex: assalto, sequestro) de forma incorreta estando em desacordo com o que a regra exige, sem haver perigo real de vida. (ADM decide essa ação, se caso houver deverá ser aplicada a punição conforme ao RDM pois é uma infração mais grave.</td>
-                            <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">AÇÃO INCORRETA</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando o player executa uma ação (ex: assalto, sequestro) de forma incorreta estando em desacordo com o que a regra exige, sem haver perigo real de vida. (ADM decide essa ação, se caso houver deverá ser aplicada a punição conforme ao RDM pois é uma infração mais grave.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">CAR PARKING</td>
-                            <td class="table-cell description-cell">Situação: Utilizar o veículo para que a pessoa não consiga se levantar, colocando o veículo em cima da pessoa ou fechar alguma passagem (porta ou caminho) com veículo impedindo a livre passagem.</td>
-                            <td class="table-cell"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">CAR PARKING</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Utilizar o veículo para que a pessoa não consiga se levantar, colocando o veículo em cima da pessoa ou fechar alguma passagem (porta ou caminho) com veículo impedindo a livre passagem.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">BAIT / COP BAIT</td>
-                            <td class="table-cell description-cell">Situação: Atrai alguém para uma emboscada, ou armadilha como o próprio nome já diz, com o intuito de tirar a vida do seu oponente, sendo ilegal e passível de punição.</td>
-                            <td class="table-cell"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">BAIT / COP BAIT</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Atrai alguém para uma emboscada, ou armadilha como o próprio nome já diz, com o intuito de tirar a vida do seu oponente, sendo ilegal e passível de punição.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">350 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">COMBAT LOGGING (CL)</td>
-                            <td class="table-cell description-cell">Combat logging ocorre quando um jogador se desconecta do servidor durante uma situação de ação ou combate para evitar punições ou perdas.</td>
-                            <td class="table-cell"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">COMBAT LOGGING (CL)</td>
+                            <td class="table-cell table-cell-description description-cell">Combat logging ocorre quando um jogador se desconecta do servidor durante uma situação de ação ou combate para evitar punições ou perdas.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">ESTELIONATO / GOLPE</td>
-                            <td class="table-cell description-cell">Situação: Ocorre quando uma pessoa aplica um golpe no intuito de tirar vantagem, principalmente financeira. Esses golpes podem ser de vários exemplos, em forma de anúncios de vendas falsas ou de prestação de algum serviço que não seja prestado corretamente.</td>
-                            <td class="table-cell"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">ESTELIONATO / GOLPE</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Ocorre quando uma pessoa aplica um golpe no intuito de tirar vantagem, principalmente financeira. Esses golpes podem ser de vários exemplos, em forma de anúncios de vendas falsas ou de prestação de algum serviço que não seja prestado corretamente.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">FAKE PROFISSÃO</td>
-                            <td class="table-cell description-cell">Situação: Roubar ou conduzir veículos destinados a profissões legais bem como se passar por alguma dessas profissões sem o devido recrutamento, como polícia, médico ou mecânico.</td>
-                            <td class="table-cell"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">FAKE PROFISSÃO</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Roubar ou conduzir veículos destinados a profissões legais bem como se passar por alguma dessas profissões sem o devido recrutamento, como polícia, médico ou mecânico.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">FAKE STAFF</td>
-                            <td class="table-cell description-cell">Situação: Se passar por algum membro da equipe staff seja através de conversar tentando ludibriar os players ou usar roupas/acessórios exclusivos da equipe staff.</td>
-                            <td class="table-cell"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">FAKE STAFF</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Se passar por algum membro da equipe staff seja através de conversar tentando ludibriar os players ou usar roupas/acessórios exclusivos da equipe staff.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">FLAMING</td>
-                            <td class="table-cell description-cell">Situação: Flaming é o ato de inflamar uma situação ou pessoa de forma negativa, utilizando ódio, falsas acusações, ofensas, ameaças, entre outros, com o intuito de denegrir a imagem da pessoa ou atacá-la diretamente.</td>
-                            <td class="table-cell"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">FLAMING</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Flaming é o ato de inflamar uma situação ou pessoa de forma negativa, utilizando ódio, falsas acusações, ofensas, ameaças, entre outros, com o intuito de denegrir a imagem da pessoa ou atacá-la diretamente.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">500 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">LEMBRAR DE AÇÃO</td>
-                            <td class="table-cell description-cell">Situação: Quando alguém está em uma ação e lembra de alguma ação anterior para benefício próprio ou para prejudicar o oponente. (Ex: "Lembrei que o fulano me deve dinheiro")</td>
-                            <td class="table-cell"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">LEMBRAR DE AÇÃO</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando alguém está em uma ação e lembra de alguma ação anterior para benefício próprio ou para prejudicar o oponente. (Ex: "Lembrei que o fulano me deve dinheiro")</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">LOOT INDEVIDO</td>
-                            <td class="table-cell description-cell">Situação: Quando você retira algo que não era seu, sem permissão ou em um local indevido. (Ex: Roubar o carro de alguém, sem ter um motivo para isso).</td>
-                            <td class="table-cell"><span class="text-punicao">400 MESES DE PRISÃO + ADV + MULTA NO VALOR DOS ITENS</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">LOOT INDEVIDO</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando você retira algo que não era seu, sem permissão ou em um local indevido. (Ex: Roubar o carro de alguém, sem ter um motivo para isso).</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO + ADV + MULTA NO VALOR DOS ITENS</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">MAU USO DO CALL ADM</td>
-                            <td class="table-cell description-cell">Situação: Quando você utiliza o call adm para reportar algo que não é grave, ou que não precisa da intervenção da equipe, ou para fazer brincadeiras.</td>
-                            <td class="table-cell"><span class="text-punicao">100 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">MAU USO DO CALL ADM</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando você utiliza o call adm para reportar algo que não é grave, ou que não precisa da intervenção da equipe, ou para fazer brincadeiras.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">100 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">MAU USO DOS CHATS DA CIDADE</td>
-                            <td class="table-cell description-cell">Situação: Quando você utiliza os chats da cidade para assuntos pessoais, brigas, xingamentos, ou assuntos que não são relevantes para o roleplay.</td>
-                            <td class="table-cell"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">MAU USO DOS CHATS DA CIDADE</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando você utiliza os chats da cidade para assuntos pessoais, brigas, xingamentos, ou assuntos que não são relevantes para o roleplay.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">METAGAMING</td>
-                            <td class="table-cell description-cell">Situação: Quando você utiliza informações externas ao jogo para obter vantagem dentro do jogo. (Ex: Assistir uma live de outro player e usar informações da live para encontrá-lo ou prejudicá-lo).</td>
-                            <td class="table-cell"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">METAGAMING</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando você utiliza informações externas ao jogo para obter vantagem dentro do jogo. (Ex: Assistir uma live de outro player e usar informações da live para encontrá-lo ou prejudicá-lo).</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">700 MESES DE PRISÃO + ADV</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">POWER GAMING</td>
-                            <td class="table-cell description-cell">Situação: Quando você realiza ações que são impossíveis na vida real, ou que vão contra a lógica do roleplay. (Ex: Cair de um prédio e sair correndo como se nada tivesse acontecido).</td>
-                            <td class="table-cell"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">POWER GAMING</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando você realiza ações que são impossíveis na vida real, ou que vão contra a lógica do roleplay. (Ex: Cair de um prédio e sair correndo como se nada tivesse acontecido).</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">300 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">QUEBRA DE IMERSÃO</td>
-                            <td class="table-cell description-cell">Situação: Quando você quebra a imersão do roleplay com ações ou falas que não condizem com a realidade do jogo. (Ex: Falar sobre a vida real, ou sobre outros jogos, enquanto está em roleplay).</td>
-                            <td class="table-cell"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">QUEBRA DE IMERSÃO</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando você quebra a imersão do roleplay com ações ou falas que não condizem com a realidade do jogo. (Ex: Falar sobre a vida real, ou sobre outros jogos, enquanto está em roleplay).</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">200 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">RDM</td>
-                            <td class="table-cell description-cell">Random Deathmatch - Situação: Quando você atira ou mata alguém sem motivo aparente, ou sem ter um roleplay que justifique a ação.</td>
-                            <td class="table-cell"><span class="text-punicao">400 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">RDM</td>
+                            <td class="table-cell table-cell-description description-cell">Random Deathmatch - Situação: Quando você atira ou mata alguém sem motivo aparente, ou sem ter um roleplay que justifique a ação.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">400 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">VDM</td>
-                            <td class="table-cell description-cell">Vehicle Deathmatch - Situação: Quando você atropela ou mata alguém com o veículo sem motivo aparente, ou sem ter um roleplay que justifique a ação.</td>
-                            <td class="table-cell"><span class="text-punicao">250 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">VDM</td>
+                            <td class="table-cell table-cell-description description-cell">Vehicle Deathmatch - Situação: Quando você atropela ou mata alguém com o veículo sem motivo aparente, ou sem ter um roleplay que justifique a ação.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">250 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">Uso de fuzil na região sul</td>
-                            <td class="table-cell description-cell">Situação: Quando você utiliza fuzil na região sul da cidade, que é uma área de segurança, onde o uso de armas de fogo é restrito.</td>
-                            <td class="table-cell"><span class="text-punicao">500 MESES DE PRISÃO</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">Uso de fuzil na região sul</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quando você utiliza fuzil na região sul da cidade, que é uma área de segurança, onde o uso de armas de fogo é restrito.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao">500 MESES DE PRISÃO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">HACKER</td>
-                            <td class="table-cell description-cell">Situação: Utilização de qualquer tipo de software ou programa de terceiros para obter vantagem indevida no jogo.</td>
-                            <td class="table-cell"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
+                        <tr class="table-row-even border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">HACKER</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Utilização de qualquer tipo de software ou programa de terceiros para obter vantagem indevida no jogo.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-800 border-b border-gray-700">
-                            <td class="table-cell font-medium text-gray-200">DARK RP</td>
-                            <td class="table-cell description-cell">Situação: Quebra de regras de roleplay que resultam em ações extremas, como tortura, estupro, ou qualquer tipo de violência gratuita.</td>
-                            <td class="table-cell"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
+                        <tr class="table-row-odd border-b border-gray-700">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">DARK RP</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Quebra de regras de roleplay que resultam em ações extremas, como tortura, estupro, ou qualquer tipo de violência gratuita.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
                         </tr>
-                        <tr class="table-row-hover bg-gray-700">
-                            <td class="table-cell font-medium text-gray-200">DUMP</td>
-                            <td class="table-cell description-cell">Situação: Utilização de bugs ou exploits para duplicar itens ou dinheiro dentro do jogo.</td>
-                            <td class="table-cell"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
+                        <tr class="table-row-even">
+                            <td class="table-cell table-cell-infraction font-medium text-gray-200">DUMP</td>
+                            <td class="table-cell table-cell-description description-cell">Situação: Utilização de bugs ou exploits para duplicar itens ou dinheiro dentro do jogo.</td>
+                            <td class="table-cell table-cell-punishment"><span class="text-punicao-ban">BANIMENTO IMEDIATO</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -288,7 +322,7 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 py-6 mt-16 text-center text-sm text-gray-400">
+    <footer class="bg-deepgray py-6 mt-16 text-center text-sm text-gray-400">
         © 2025 Metrópole RJ. Todos os direitos reservados.
     </footer>
 </body>
