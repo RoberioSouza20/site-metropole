@@ -1,151 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Metrópole RJ RP — Landing</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metrópole RJ RP</title>
   <meta name="description" content="Landing page do servidor de RP Metrópole RJ." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Fonte e Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          fontFamily: { sans: ['Inter', 'system-ui'] },
           colors: {
             brand: {
-              50: '#eefaff', 100: '#d8f2ff', 200: '#b2e4ff', 300: '#83d2ff',
-              400: '#4bb8ff', 500: '#1a9fff', 600: '#007fe6', 700: '#0065b4',
-              800: '#004d88', 900: '#00365f'
+              500: '#d32f2f',
+              700: '#b71c1c'
             }
-          },
-          boxShadow: {
-            glow: '0 0 40px rgba(26,159,255,0.35)'
           }
         }
-      },
-      darkMode: 'class'
+      }
     }
   </script>
-  <style>
-    :root { color-scheme: dark; }
-    html { scroll-behavior: smooth; }
-    .hero-bg {
-      position: absolute; inset: 0; overflow: hidden; pointer-events:none;
-      background: radial-gradient(60vmax 60vmax at 10% -10%, rgba(26,159,255,.25), transparent 50%),
-                  radial-gradient(40vmax 40vmax at 100% 0%, rgba(0,127,230,.20), transparent 50%),
-                  radial-gradient(40vmax 40vmax at 50% 120%, rgba(0,101,180,.20), transparent 50%);
-      filter: blur(20px);
-    }
-  </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-sans">
+<body class="bg-gray-900 text-white font-sans">
   <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3 group">
-        <div class="h-9 w-9 rounded-2xl bg-brand-500 shadow-glow grid place-items-center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 12L10 4l4 4 7-2-8 14-3-6-7-2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <span class="text-lg font-bold tracking-tight">Metrópole<span class="text-brand-400">RJ</span></span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a class="hover:text-brand-300 transition" href="#inicio">Início</a>
-        <a class="hover:text-brand-300 transition" href="#como-entrar">Como entrar</a>
-        <a class="hover:text-brand-300 transition" href="#regras">Regras</a>
-        <a class="hover:text-brand-300 transition" href="#doacoes">Doações</a>
-        <a class="hover:text-brand-300 transition" href="#contato">Contato</a>
+  <header class="bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between px-6 py-3">
+      <!-- Logo -->
+      <img src="logo.png" alt="Metrópole RJ" class="h-14">
+
+      <!-- Menu -->
+      <nav class="flex gap-6 text-lg font-medium">
+        <a href="#home" class="hover:text-brand-500">Home</a>
+        <a href="#punicoes" class="hover:text-brand-500">Punições</a>
+        <a href="https://discord.gg/pNZePYUyZe" target="_blank" class="hover:text-brand-500">Discord</a>
+        <a href="https://www.instagram.com/metropolerjofc" target="_blank" class="hover:text-brand-500">Instagram</a>
       </nav>
-      <div class="flex items-center gap-3">
-        <a href="#whitelist" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-400 active:scale-[.99] transition shadow-glow text-sm font-semibold">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 1.5a10.5 10.5 0 100 21 10.5 10.5 0 000-21zM11 6h2v7h-2V6zm1 11.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
-          Whitelist
-        </a>
-      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="inicio" class="relative pt-16">
-    <div class="hero-bg"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <p class="text-brand-300 font-semibold tracking-wide uppercase mb-3">Servidor GTA RP</p>
-        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-          Viva o <span class="text-brand-400">Roleplay</span> do seu jeito
-        </h1>
-        <p class="mt-6 text-zinc-300 max-w-prose">Bem-vindo ao <strong>Metrópole RJ</strong> — economia balanceada, equipes ativas e eventos semanais. Entre agora e construa sua história dentro da cidade.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://discord.gg/pNZePYUyZe" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-zinc-900 hover:bg-zinc-100 font-semibold shadow">
-            Entrar no Discord
-          </a>
-          <a href="#como-entrar" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:bg-white/5 font-semibold">
-            Como entrar
-          </a>
-        </div>
-        <div class="mt-8 grid grid-cols-3 gap-3 text-sm">
-          <div class="p-4 rounded-xl border border-white/10 bg-white/5"><div class="text-2xl font-bold">1,024+</div><div class="text-zinc-400">Vagas simultâneas</div></div>
-          <div class="p-4 rounded-xl border border-white/10 bg-white/5"><div class="text-2xl font-bold">24/7</div><div class="text-zinc-400">Staff online</div></div>
-          <div class="p-4 rounded-xl border border-white/10 bg-white/5"><div class="text-2xl font-bold">Anti-cheat</div><div class="text-zinc-400">Proteção ativa</div></div>
-        </div>
-      </div>
-      <div>
-        <div class="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1544923246-7731829f38e3?q=80&w=1200&auto=format&fit=crop" alt="City" class="w-full h-full object-cover opacity-80">
-          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent"></div>
-          <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-zinc-950/60 border border-white/10 backdrop-blur">
-            <p class="text-xs uppercase tracking-wide text-zinc-400">Conecte-se</p>
-            <div class="mt-1 flex flex-wrap items-center gap-3">
-              <code class="px-3 py-1 rounded-lg bg-black/60 border border-white/10 text-sm select-all">connect metropole.fusiongroup.club</code>
-              <button class="px-3 py-1 rounded-lg bg-brand-500 hover:bg-brand-400 text-sm font-semibold" onclick="copyIP()">Copiar IP</button>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section id="home" class="relative h-[70vh] flex items-center justify-center bg-cover bg-center" style="background-image: url('banner.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative text-center">
+      <h1 class="text-5xl font-bold mb-4">Metrópole RJ RP</h1>
+      <p class="text-lg">Servidor oficial de Roleplay no Rio de Janeiro</p>
     </div>
   </section>
 
-  <!-- Restante das seções mantidas iguais -->
-
-  <!-- Contato / Footer -->
-  <footer id="contato" class="border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h3 class="text-lg font-semibold">Fale com a staff</h3>
-          <p class="mt-2 text-zinc-400">Dúvidas, parcerias e denúncias: abra um ticket no Discord.</p>
-          <div class="mt-4 flex flex-wrap gap-3">
-            <a href="https://discord.gg/pNZePYUyZe" target="_blank" class="px-4 py-2 rounded-xl bg-white text-zinc-900 hover:bg-zinc-100 font-semibold">Abrir ticket</a>
-            <a href="https://www.instagram.com/metropolerjofc?igsh=MTlldWgyNjN0NnZ4ZQ==" target="_blank" class="px-4 py-2 rounded-xl border border-white/15 hover:bg-white/5 font-semibold">Instagram</a>
-          </div>
-        </div>
-        <div class="md:justify-self-end text-sm text-zinc-400">
-          <p>© <span id="year"></span> Metrópole RJ. Todos os direitos reservados.</p>
-          <p class="mt-1">Não afiliado à Rockstar Games. Este site é um fã‑projeto.</p>
-        </div>
-      </div>
+  <!-- Punições -->
+  <section id="punicoes" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center">📜 Tabela de Punições</h2>
+      <img src="regras1.png" alt="Tabela de Punições Parte 1" class="mx-auto rounded-lg shadow-lg mb-8">
+      <img src="regras2.png" alt="Tabela de Punições Parte 2" class="mx-auto rounded-lg shadow-lg">
     </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 mt-16 text-center text-sm text-gray-400">
+    © 2025 Metrópole RJ RP. Todos os direitos reservados.
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const players = Math.floor(200 + Math.random()*300);
-    const queue = Math.floor(Math.random()*30);
-    document.getElementById('players').textContent = players;
-    document.getElementById('queue').textContent = queue;
-
-    function copyIP(){
-      const ip = 'connect metropole.fusiongroup.club';
-      navigator.clipboard.writeText(ip).then(()=>{
-        const btns = document.querySelectorAll('button');
-        btns.forEach(b=>{ if(b.textContent.includes('Copiar IP')){ b.textContent='Copiado!'; setTimeout(()=>b.textContent='Copiar IP',1500);} });
-      })
-    }
-  </script>
 </body>
 </html>
